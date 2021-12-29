@@ -27,6 +27,7 @@ module "backend" {
   resource_group_location = module.backend.resource_group_location
   ghost_front_url         = var.ghost_front_url
 
+  mysql_db_name           = module.backend.mysql_db_name
   mysql_fqdn              = module.backend.mysql_fqdn
   mysql_connection_user   = module.backend.mysql_connection_user
   mysql_password          = module.backend.mysql_password

@@ -30,6 +30,14 @@ resource "azurerm_mysql_server" "tikjob_mysql" {
   ssl_minimal_tls_version_enforced  = "TLS1_2"
 }
 
+resource "azurerm_mysql_database" "tikjob_mysql_db" {
+  name                = "ghost"
+  resource_group_name = azurerm_resource_group.tikjob_rg.name
+  server_name         = azurerm_mysql_server.tikjob_mysql.name
+  charset             = "utf8"
+  collation           = "utf8_unicode_ci"
+}
+
 # Enable access from other Azure services (TODO: Switch to IP list)
 resource "azurerm_mysql_firewall_rule" "tikjob_mysql_access" {
   name                = "tikjob-${var.env_name}-mysql-access"

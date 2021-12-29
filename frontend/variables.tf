@@ -23,6 +23,10 @@ variable "mysql_password" {
   type = string
 }
 
+variable "mysql_db_name" {
+  type = string
+}
+
 /* Storage */
 variable "storage_account_name" {
   type = string

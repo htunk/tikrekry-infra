@@ -31,3 +31,7 @@ output "storage_account_key" {
 output "storage_share_name" {
   value = azurerm_storage_share.tikjob_storage_share.name
 }
+
+output "mysql_db_name" {
+  value = azurerm_mysql_database.tikjob_mysql_db.name
+}

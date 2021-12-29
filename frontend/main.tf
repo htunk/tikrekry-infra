@@ -56,7 +56,7 @@ resource "azurerm_app_service" "tikjob_ghost" {
     database__connection__host           = var.mysql_fqdn
     database__connection__user           = var.mysql_connection_user
     database__connection__password       = var.mysql_password
-    database__connection__database       = "ghost"
+    database__connection__database       = var.mysql_db_name
     database__connection__ssl            = "true"
     database__connection__ssl_minVersion = "TLSv1.2"
     
